@@ -9,8 +9,8 @@
                 <div class="col-md-12 grid-margin stretch-card">
                   <div class="card">
                     <div class="card-body">
-                      <p class="card-title">Website Audience Metrics</p>
-                      <p class="text-muted">25% more traffic than previous week</p>
+                      <p class="card-title">Website NGK Company</p>
+                      <p class="text-muted">Learn and focus yourself</p>
                       <div class="row mb-3">
                         <div class="col-md-7">
                           <div class="d-flex justify-content-between traffic-status">
