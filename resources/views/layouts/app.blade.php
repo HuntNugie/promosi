@@ -7,6 +7,12 @@
 </head>
 <body>
   <div class="container-scroller d-flex">
+    @guest
+        @yield('auth')
+    @endguest
+
+    @auth
+
     <!-- partial:./partials/_sidebar.html -->
     <x-admin.sidebar></x-admin.sidebar>
     <!-- partial -->
@@ -19,6 +25,8 @@
 
      <x-admin.footer/>
      </div>
+    @endauth
+
       <!-- main-panel ends -->
     </div>
     <!-- page-body-wrapper ends -->
