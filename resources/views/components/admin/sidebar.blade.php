@@ -22,7 +22,7 @@
           </a>
             <div class="collapse" id="product">
             <ul class="nav flex-column sub-menu">
-              <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Tabel Product </a></li>
+              <li class="nav-item"> <a class="nav-link" href="{{ route("produk.index") }}"> Tabel Product </a></li>
               <li class="nav-item"> <a class="nav-link" href="pages/samples/login-2.html"> Tambah data Product </a></li>
             </ul>
           </div>
