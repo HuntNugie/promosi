@@ -32,26 +32,36 @@
                         </tr>
                       </thead>
                       <tbody>
+                        @foreach ($produks as $pro)
+
                         <tr class="table-info">
-                          <td>
-                            1
+                            <td>
+                            {{ $loop->iteration }}
                           </td>
                           <td>
-                            Herman Beck
+                              {{ $pro->nm_produk }}
                           </td>
                           <td>
-                            Photoshop
+                           <a href="{{ asset("storage") }}/{{ $pro->foto }}" >
+                         <img src="{{ asset("storage") }}/{{ $pro->foto }}"  alt=""></a>
                           </td>
                           <td>
-                            $ 77.99
+                            {{ $pro->harga }}
                           </td>
                           <td>
-                            May 15, 2015
+                            {{ $pro->deskripsi }}
                           </td>
                           <td>
-                            May 15, 2015
-                          </td>
+                              <a href="{{ route("produk.edit",$pro->id) }}" class="btn btn-warning" >Edit</a>
+                              <form action="{{ route("produk.destroy",$pro->id) }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                              <button class="btn btn-danger" type="submit">delete</button>
+
+                              </form>
+                            </td>
                         </tr>
+                            @endforeach
                       </tbody>
                     </table>
                   </div>
