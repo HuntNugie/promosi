@@ -41,12 +41,17 @@ class ProdukController extends Controller
     $foto = $request->file('foto');
 
     // tambah kan data dan path ke dalam database
-    $path = $this->upload($foto,"produk");
+    try {
+     $path = $this->upload($foto,"produk");
     if($path){
         $valid["foto"] = $path;
         Product::create($valid);
     }
     return redirect()->route("produk.index")->with("success","Berhasil menambahkan product");
+    } catch (\Exception $th) {
+        //throw $th;
+        return back()->withErrors("Terjadi Kesalahan ".$th->getMessage());
+    }
     }
 
     /**
