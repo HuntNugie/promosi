@@ -5,7 +5,7 @@
           <span></span>
         </li>
         <li class="nav-item {{ request()->routeIs("home") ? "active" : "" }}">
-          <a class="nav-link" href="index.html">
+          <a class="nav-link" href="{{ route("home") }}">
             <i class="mdi mdi-view-quilt menu-icon"></i>
             <span class="menu-title">Dashboard</span>
           </a>
@@ -23,7 +23,7 @@
             <div class="collapse" id="product">
             <ul class="nav flex-column sub-menu">
               <li class="nav-item"> <a class="nav-link" href="{{ route("produk.index") }}"> Tabel Product </a></li>
-              <li class="nav-item"> <a class="nav-link" href="pages/samples/login-2.html"> Tambah data Product </a></li>
+              <li class="nav-item"> <a class="nav-link {{ request()->is('produk') ? 'text-white' : '' }}" href="{{ route("produk.create") }}"> Tambah data Product </a></li>
             </ul>
           </div>
         </li>
