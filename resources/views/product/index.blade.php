@@ -46,7 +46,7 @@
                          <img src="{{ asset("storage") }}/{{ $pro->foto }}"  alt=""></a>
                           </td>
                           <td>
-                            {{ $pro->harga }}
+                            {{ Number::currency($pro->harga,"IDR") }}
                           </td>
                           <td>
                             {{ $pro->deskripsi }}

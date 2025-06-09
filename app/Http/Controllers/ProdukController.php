@@ -48,7 +48,7 @@ class ProdukController extends Controller
         $valid["foto"] = $path;
         Product::create($valid);
     }
-    return redirect()->route("produk.index")->with("success","Berhasil menambahkan product");
+    return redirect()->route("produk.index")->with("sukses","Berhasil menambahkan product");
     } catch (\Exception $th) {
         //throw $th;
         return back()->withErrors("Terjadi Kesalahan ".$th->getMessage());
@@ -99,7 +99,7 @@ class ProdukController extends Controller
      }
      $produk->update($valid);
 
-    return redirect()->route("produk.index")->with("success","Berhasil menambahkan product");
+    return redirect()->route("produk.index")->with("sukses","Berhasil Mengupdate product");
     } catch (\Exception $th) {
         //throw $th;
         return back()->withErrors("Terjadi Kesalahan ".$th->getMessage());

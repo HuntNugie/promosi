@@ -7,12 +7,20 @@
 </head>
 <body>
   <div class="container-scroller d-flex">
+    @session("sukses")
+        <script>
+            Swal.fire({
+  title: "{{ session('sukses') }}",
+  icon: "success",
+  draggable: true
+});
+        </script>
+    @endsession
     @guest
         @yield('auth')
     @endguest
 
     @auth
-
     <!-- partial:./partials/_sidebar.html -->
     <x-admin.sidebar></x-admin.sidebar>
     <!-- partial -->
