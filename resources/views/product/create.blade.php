@@ -8,7 +8,7 @@
                   <p class="card-description">
                     Menambahkan data produk yang akan di promosikan
                   </p>
-                  <form class="forms-sample" action="{{ route("produk.store") }}" method="post">
+                  <form class="forms-sample" action="{{ route("produk.store") }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                       <label for="nm_produk">Nama Produk</label>
@@ -26,7 +26,7 @@
                       <label>Foto Produk</label>
                       <input type="file" name="img[]" class="file-upload-default">
                       <div class="input-group col-xs-12">
-                        <input type="file" class="form-control file-upload-info" accept="image" >
+                        <input type="file" name="foto" class="form-control file-upload-info" accept="image" >
                         <span class="input-group-append">
                           <button class="file-upload-browse btn btn-primary" type="button">Foto</button>
                         </span>

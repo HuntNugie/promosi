@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class ProdukController extends Controller
 {
@@ -27,7 +30,23 @@ class ProdukController extends Controller
      */
     public function store(Request $request)
     {
-        //
+    //   melakukan validasi terlebih dahulu
+    $valid = $request->validate([
+        "nm_produk" => "required | string | max:70",
+        "harga" => "required | numeric",
+        "deskripsi" => "required",
+        "foto" => "required | image | max:2048"
+    ]);
+    // menambahkan foto ke dalam strage
+    $foto = $request->file('foto');
+
+    // tambah kan data dan path ke dalam database
+    $path = $this->upload($foto,"produk");
+    if($path){
+        $valid["foto"] = $path;
+        Product::create($valid);
+    }
+    return redirect()->route("produk.index")->with("success","Berhasil menambahkan product");
     }
 
     /**
@@ -61,4 +80,5 @@ class ProdukController extends Controller
     {
         //
     }
+
 }
