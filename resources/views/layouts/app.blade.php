@@ -3,7 +3,9 @@
 
 <head>
   <!-- Required meta tags -->
-<x-admin.head/>
+<x-admin.head>
+    @stack("style")
+</x-admin.head>
 </head>
 <body>
   <div class="container-scroller d-flex">

@@ -1,6 +1,6 @@
 membuat website promosi kain dan manajemen pegawai
 
-product : 
+product :
 -nm_kain
 -deskripsi
 -harga
@@ -16,12 +16,13 @@ tambahan user:
 -status
 -jabatan_id
 
-perusahaan : 
+perusahaan :
 -nm_perusahaan
 -foto
 -tentang
 
 
 admin -> dapat melakukan tambah produk edit dan hapus
-superadmin -> bisa melakukan apa yang admin lakukan dan dapat mengkonfirmasi admin(konfirmasi status) serta dapat mengatur logo perusahaan, nama perusahaan, dan tentang perusahaan, 
+superadmin -> bisa melakukan apa yang admin lakukan dan dapat mengkonfirmasi admin(konfirmasi status) serta dapat mengatur logo perusahaan, nama perusahaan, dan tentang perusahaan,
+
 
