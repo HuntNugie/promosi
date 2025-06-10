@@ -39,7 +39,7 @@
           </a>
           <div class="collapse" id="auth">
             <ul class="nav flex-column sub-menu">
-              <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Tabel Pegawai </a></li>
+              <li class="nav-item"> <a class="nav-link" href="{{ route("pegawai.index") }}"> Tabel Pegawai </a></li>
             </ul>
           </div>
         </li>
