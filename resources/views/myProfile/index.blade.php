@@ -57,11 +57,11 @@
               <div class="row profile-container">
                 <!-- Sidebar kiri -->
                 <div class="col-md-4 profile-sidebar">
-                  <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="User Photo">
-                  <h4>Ahmad Santoso</h4>
+                  <img src="{{ asset("storage") }}/{{ auth()->user()->foto }}" alt="User Photo">
+                  <h4>{{ auth()->user()->name }}</h4>
                   <span class="badge badge-success badge-status">Aktif</span>
                   <div class="btn-group-profile">
-                    <button class="btn btn-sm btn-primary">Edit Profil</button>
+                    <a href="{{ route("myProfile.edit") }}" class="btn btn-sm btn-primary">Edit Profil</a>
                   </div>
                 </div>
 
@@ -69,31 +69,27 @@
                 <div class="col-md-8">
                   <div class="info-group row">
                     <div class="col-sm-4 info-label">Email</div>
-                    <div class="col-sm-8 info-value">ahmad.santoso@example.com</div>
+                    <div class="col-sm-8 info-value">{{ auth()->user()->email }}</div>
                   </div>
                   <div class="info-group row">
                     <div class="col-sm-4 info-label">Jabatan</div>
-                    <div class="col-sm-8 info-value">Supervisor</div>
+                    <div class="col-sm-8 info-value">{{ auth()->user()->jabatan->nm_jabatan }}</div>
                   </div>
                   <div class="info-group row">
                     <div class="col-sm-4 info-label">Gaji</div>
-                    <div class="col-sm-8 info-value">Rp 7.500.000</div>
+                    <div class="col-sm-8 info-value">{{ Number::currency(auth()->user()->gaji ?? 0,"IDR") }}</div>
                   </div>
                   <div class="info-group row">
                     <div class="col-sm-4 info-label">Telepon</div>
-                    <div class="col-sm-8 info-value">0812-3456-7890</div>
-                  </div>
-                  <div class="info-group row">
-                    <div class="col-sm-4 info-label">Alamat</div>
-                    <div class="col-sm-8 info-value">Jl. Melati No. 25, Bandung</div>
+                    <div class="col-sm-8 info-value">{{ auth()->user()->telepon }}</div>
                   </div>
                   <div class="info-group row">
                     <div class="col-sm-4 info-label">Role</div>
-                    <div class="col-sm-8 info-value">Admin</div>
+                    <div class="col-sm-8 info-value">{{ auth()->user()->role }}</div>
                   </div>
                   <div class="info-group row">
-                    <div class="col-sm-4 info-label">Konfirmasi</div>
-                    <div class="col-sm-8 info-value"><span class="badge badge-info">Terverifikasi</span></div>
+                    <div class="col-sm-4 info-label">Status</div>
+                    <div class="col-sm-8 info-value"><span class="badge badge-{{ auth()->user()->status == "active" ? 'success' : 'warning' }}">{{ auth()->user()->status }}</span></div>
                   </div>
                 </div>
               </div>

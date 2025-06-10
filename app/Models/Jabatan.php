@@ -9,4 +9,5 @@ class Jabatan extends Model
 {
     /** @use HasFactory<\Database\Factories\JabatanFactory> */
     use HasFactory;
+    protected $fillable = ["nm_jabatan"];
 }

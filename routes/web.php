@@ -16,4 +16,8 @@ Auth::routes();
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource("produk",ProdukController::class);
 Route::resource("pegawai",PegawaiController::class);
-Route::get("/myProfile",[ProfileController::class,"index"])->name("myProfile");
+Route::prefix("myProfile")->group(function(){
+    Route::get("/index",[ProfileController::class,"index"])->name("myProfile");
+    Route::get("/edit",[ProfileController::class,"edit"])->name("myProfile.edit");
+    Route::post('/update/{profile}',[ProfileController::class,"update"])->name("myProfile.update");
+});

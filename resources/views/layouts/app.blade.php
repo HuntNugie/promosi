@@ -44,7 +44,9 @@
   <!-- container-scroller -->
 
   <!-- base:js -->
-  <x-admin.script/>
+  <x-admin.script>
+    @stack("skrip")
+  </x-admin.script>
   <!-- End custom js for this page-->
 </body>
 
