@@ -18,6 +18,7 @@
 });
         </script>
     @endsession
+
     @guest
         @yield('auth')
     @endguest
