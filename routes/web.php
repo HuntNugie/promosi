@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\PegawaiController;
+use App\Http\Controllers\PerusahaanController;
 use App\Http\Controllers\ProfileController;
 
 Route::get('/', function () {
@@ -21,3 +22,4 @@ Route::prefix("myProfile")->group(function(){
     Route::get("/edit",[ProfileController::class,"edit"])->name("myProfile.edit");
     Route::post('/update/{profile}',[ProfileController::class,"update"])->name("myProfile.update");
 });
+Route::get("/perusahaan",[PerusahaanController::class,"index"])->name("perusahaan");

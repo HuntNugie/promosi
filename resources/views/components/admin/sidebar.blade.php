@@ -48,7 +48,7 @@
           <span></span>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="docs/documentation.html">
+          <a class="nav-link" href="{{ route("perusahaan") }}">
             <i class="mdi mdi-city menu-icon"></i>
             <span class="menu-title">Profile Perusahaan</span>
           </a>
