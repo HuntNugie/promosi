@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Perusahaan;
 use Illuminate\Support\Str;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -19,4 +20,5 @@ class Controller extends BaseController
         }
 
     }
+
 }
