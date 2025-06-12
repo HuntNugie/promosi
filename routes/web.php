@@ -22,4 +22,8 @@ Route::prefix("myProfile")->group(function(){
     Route::get("/edit",[ProfileController::class,"edit"])->name("myProfile.edit");
     Route::post('/update/{profile}',[ProfileController::class,"update"])->name("myProfile.update");
 });
-Route::get("/perusahaan",[PerusahaanController::class,"index"])->name("perusahaan");
+Route::prefix("/perusahaan")->group(function(){
+    Route::get("/detail",[PerusahaanController::class,"index"])->name("perusahaan");
+    Route::get("/edit/{perusahaan:slug}",[PerusahaanController::class,"edit"])->name("perusahaan.edit");
+    Route::put("/edit/{perusahaan:slug}",[PerusahaanController::class,"update"])->name("perusahaan.update");
+});
